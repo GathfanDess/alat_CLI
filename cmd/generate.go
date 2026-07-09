@@ -51,7 +51,6 @@ Konfigurasi Driver {{.DBType}}:
 */
 `
 
-// generateCmd represents the generate command
 var generateCmd = &cobra.Command{
 	Use:   "generate",
 	Short: "A brief description of your command",
@@ -75,6 +74,7 @@ to quickly create a Cobra application.`,
 			fmt.Printf("Gagal membuat folder: %v\n", err)
 			return
 		}
+		
 
 		var dbSnippet string
 		if chosenDB == "mysql" {
