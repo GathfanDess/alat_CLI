@@ -2,7 +2,10 @@ module github.com/GathfanDess/alat_CLI
 
 go 1.26.5
 
-require github.com/spf13/cobra v1.10.2
+require (
+	github.com/showwin/speedtest-go v1.7.10
+	github.com/spf13/cobra v1.10.2
+)
 
 require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect

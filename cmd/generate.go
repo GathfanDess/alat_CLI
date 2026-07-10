@@ -61,6 +61,10 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
+		if moduleName == "" {
+			fmt.Println("Error: flag --name / -n wajib diisi")
+			return
+		}
 		folderName := strings.ToLower(moduleName)
 		chosenDB := strings.ToLower(dbType)
 
@@ -133,6 +137,6 @@ var dbType string
 func init() {
 	rootCmd.AddCommand(generateCmd)
 	generateCmd.Flags().StringVarP(&moduleName, "name", "n", "", "Nama modul atau fitur (wajib diisi)")
-	generateCmd.MarkFlagRequired("name")
+
 	generateCmd.Flags().StringVarP(&dbType, "db", "d", "postgres", "Jenis database (postgres/mysql)")
 }

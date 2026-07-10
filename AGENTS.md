@@ -22,7 +22,18 @@ go install ./...  # Compiles the alat_CLI binary to $GOPATH/bin/alat_CLI
 ```bash
 alat_CLI help                # See available commands
 alat_CLI generate -h         # See generate command options
+alat_CLI generate cache-scan -h  # See cache-scan options
 ```
+
+### Scan and clean cache files:
+```bash
+alat_CLI generate cache-scan                        # Scan default cache dirs, interactive delete
+alat_CLI generate cache-scan --min-size 50           # Only show dirs >= 50 MB
+alat_CLI generate cache-scan --dry-run               # Preview only, no deletion
+alat_CLI generate cache-scan --all                   # Delete all without prompt
+```
+
+Scans `~/Library/Caches` (macOS) and `~/.cache` (Linux) for large cache directories. Displays sizes and lets you select which to delete.
 
 ### Generate a new feature:
 ```bash
